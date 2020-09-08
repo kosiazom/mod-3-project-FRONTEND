@@ -1,4 +1,4 @@
-const question = document.getElementById('question')
+const qust = document.getElementById('question')
 const answer = document.getElementById('answer')
 const nextBtn = document.getElementById('next-button')
 const cardsURL = "http://localhost:3000/cards/"
@@ -8,14 +8,16 @@ fetch(cardsURL)
 .then(questions => allQs(questions))
 
 function allQs(questions) {
+    questions.forEach(question => eachQ(question))
+}
 
+function eachQ(question) {
+    qust.innerText = question.front_side
+    answer.innerText = question.back_side
 }
 
 
-question.innerText = questions.front_side
-answer.innerText = questions.back_side
 
-// answer.innerText = questions.back_side
 
 // fetch("http://localhost:3000/cards", {
 //     method: "POST",
