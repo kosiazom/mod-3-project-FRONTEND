@@ -19,11 +19,16 @@ const answer = document.getElementById('answer')
 answer.innerText = card.back_side
 
 const nextBtn = document.getElementById('next-button')
-   
 
-    
+   
+//when we add a listener to the next button it should fgot the next question and answer
     
 }
+
+function sideBar() {
+    
+}
+
 
 
 
