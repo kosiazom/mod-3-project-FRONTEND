@@ -1,19 +1,28 @@
-const qust = document.getElementById('question')
-const answer = document.getElementById('answer')
-const nextBtn = document.getElementById('next-button')
+
 const cardsURL = "http://localhost:3000/cards/"
 
 fetch(cardsURL)
 .then(res => res.json())
-.then(questions => allQs(questions))
+.then(cards => allQs(cards))
 
-function allQs(questions) {
-    questions.forEach(question => eachQ(question))
+function allQs(cards) {
+cards.forEach(card => eachCard(card))
 }
 
-function eachQ(question) {
-    qust.innerText = question.front_side
-    answer.innerText = question.back_side
+function eachCard(card) {
+
+    
+
+const qust = document.getElementById('question')
+qust.innerText = card.front_side
+const answer = document.getElementById('answer')
+answer.innerText = card.back_side
+
+const nextBtn = document.getElementById('next-button')
+   
+
+    
+    
 }
 
 
