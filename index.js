@@ -2,43 +2,57 @@
 const cardsURL = "http://localhost:3000/cards/"
 
 javaCards()
+rubyCards()
+htmlcssCards()
 
 function javaCards(){
     let js = document.getElementById('javascript')
 js.addEventListener('click', (e) => {
     e.preventDefault()
-    console.dir(e.target)
+    // console.dir(e.target)
+    let mc = document.getElementById('main-container')
+    mc.innerHTML = ""
 
 fetch(cardsURL)
 .then(res => res.json())
-.then(cards => cards.forEach(card => (card.category === "Javascript")))
+.then(cards => cards.forEach(card => card.category === "Javascript" ? eachCard(card) : console.log("Try Again")))
 
-
-
-
-    //  debugger
-    // console.log(e.target)
-
-    // getCards()
-    // allQs()
-  
-    // eachCard()
 })
+}
 
+function rubyCards(){
+    let rb = document.getElementById('ruby')
+rb.addEventListener('click', (e) => {
+    e.preventDefault()
+    // console.dir(e.target)
+    let mc = document.getElementById('main-container')
+    mc.innerHTML = ""
+
+fetch(cardsURL)
+.then(res => res.json())
+.then(cards => cards.forEach(card => card.category === "Ruby" ? eachCard(card) : console.log("Try Again")))
+
+// cards.filter(card => card.category == e.target)
+
+})
+}
+
+function htmlcssCards(){
+    let hc = document.getElementById('htmlcss')
+hc.addEventListener('click', (e) => {
+    e.preventDefault()
+    // console.dir(e.target)
+    let mc = document.getElementById('main-container')
+    mc.innerHTML = ""
+
+fetch(cardsURL)
+.then(res => res.json())
+.then(cards => cards.forEach(card => card.category === "HTML/CSS" ? eachCard(card) : console.log("Try Again")))
+
+})
 }
 
 
-// function getCards() {
-//     fetch(cardsURL)
-// .then(res => res.json())
-// .then(cards => allQs(cards))
-// }
-
-
-function allQs(cards) {
-   // debugger
-cards.forEach(card => eachCard(card))
-}
 
 function eachCard(card) {
     let javaContainer = document.getElementById("main-container")
@@ -78,29 +92,6 @@ function eachCard(card) {
 }
 
 
-
-// const front = document.getElementById('question-front')
-// front.innerText = card.front_side
-// const back = document.getElementById('answer-back')
-// back.innerText = card.back_side
-
-// const nextBtn = document.getElementById('next-button')
-
-
-
-   
-//when we add a listener to the next button it should fgot the next question and answer
-    
-
-
-// function sideBar() {
-
-// }
-
-
-
-
-
 // fetch("http://localhost:3000/cards", {
 //     method: "POST",
 //     headers: {
@@ -108,9 +99,9 @@ function eachCard(card) {
 //         "Accept": "application/json"
 //     },
 //     body: JSON.stringify({
-//         front_side: "What's ",
-//         back_side: "",
-//         category: "",
+//         front_side: "This is the question",
+//         back_side: "This is the answer",
+//         category: "Javascript",
 //         deck_id: 1
 //     })
 // })

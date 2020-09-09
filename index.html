@@ -11,8 +11,44 @@
     <img src = "">
     <h2>Decks</h2>
     <a id="javascript" href="">Javascript</a>
-    <a href="">Ruby</a>
-    <a href="">HTML/CSS</a>
+    <a id="ruby" href="">Ruby</a>
+    <a id="htmlcss" href="">HTML/CSS</a>
+    <form id="addnewcard">
+    <a id="addcard" href="">Add a Card</a>
+        <label>Question</label>    
+        <input
+            type="text"
+            name="text"
+            value=""
+            placeholder="Enter Question"
+            id="frontside"
+        />
+        <br />
+        <label>Answer</label>
+        <input
+            type="text"
+            name="text"
+            value=""
+            placeholder="Enter Answer"
+            id="backside"
+        />
+        <br />
+      
+        <label>Select Category</label>
+            <select id = "categoryDropdown">
+                <br />
+                <option value = "Javascript"> Javascript </option>
+                <option value = "Ruby"> Ruby </option>
+                <option value = "Ruby"> HTML/CSS </option>
+            </select>
+        <br />
+        <input
+        type="submit"
+        name="submit"
+        value="Create New Card"
+        class="submit"
+        />
+        </form>
 </div>
 
 <div class="welcome-container"> 

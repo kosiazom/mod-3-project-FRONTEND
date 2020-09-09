@@ -3,6 +3,9 @@ body {
     margin: auto
 }
 
+.welcome-container {
+    background: purple;
+}
 
 .side-bar-menu {
     position: fixed;
