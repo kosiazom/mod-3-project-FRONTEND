@@ -99,7 +99,6 @@ function addCard(){
     let front_side = e.target[0].value 
     let back_side = e.target[1].value 
     let category = e.target[2].value 
-    
   
     fetch(cardsURL, {
         method: "POST",
@@ -108,7 +107,7 @@ function addCard(){
             "Accept": "application/json"
         },
         body: JSON.stringify({
-            front_side, back_side, category, deck_id: 1
+            front_side, back_side, category
         })
     })
     .then(res => res.json())
