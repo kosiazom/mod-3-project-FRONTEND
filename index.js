@@ -25,9 +25,9 @@ const nextBtn = document.getElementById('next-button')
     
 }
 
-function sideBar() {
-    
-}
+// function sideBar() {
+
+// }
 
 
 

@@ -3,17 +3,6 @@ body {
     margin: auto
 }
 
-.main-container{
-    position: absolute;
-    width: 250px;
-    height: 320px;
-    background: none;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    margin: auto;
-
-}
 
 .side-bar-menu {
     position: fixed;
@@ -53,34 +42,72 @@ body {
    text-transform: uppercase;
 }
 
-
-
-
-#thefront {
+.main-container{
     position: relative;
-    top: 0;
-    left: 0;
-    width: 50%;
-    height: 50%;
-    border-radius: 10px;
-    transform-style: preserve-3d;
-    transition: all 0.8s ease;
-    background: rgb(143, 172, 196);
-    justify-content: center;
+    width: 250px;
+    height: 320px;
+    background: none;
+    top: 100%;
+    left: 100%;
+    transform: translate(-50%, -50%);
     margin: auto;
-    font-size: 16px;
+    justify-items: center;
+    padding-left: 1px;
+    
 }
 
-#theback {
+.card {
     position: relative;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 400px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.thefront {
+    position: absolute;
     top: 0;
     left: 0;
     width: 50%;
-    height: 50%;
+    height: 100%;
     border-radius: 10px;
-    transform-style: preserve-3d;
-    transition: all 0.8s ease;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: rgb(143, 172, 196);
+    color: #000;
+    margin: auto;
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+}
+.card:hover .thefront {
+    transform: perspective(500px) rotateY(180deg);
+    }
+
+.theback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    text-align: center;
     background: rgb(180, 110, 213);
     justify-content: center;
     margin: auto;
+    transform: perspective(500px) rotateY(180deg);
 }
+
+.card:hover .theback {
+    transform: perspective(500px) rotateY(3600deg);
+    }
