@@ -4,6 +4,7 @@ const cardsURL = "http://localhost:3000/cards/"
 javaCards()
 rubyCards()
 htmlcssCards()
+addCard()
 
 function javaCards(){
     let js = document.getElementById('javascript')
@@ -52,8 +53,6 @@ fetch(cardsURL)
 })
 }
 
-
-
 function eachCard(card) {
     let javaContainer = document.getElementById("main-container")
 
@@ -92,23 +91,31 @@ function eachCard(card) {
 }
 
 
-// fetch("http://localhost:3000/cards", {
-//     method: "POST",
-//     headers: {
-//         "Content-Type": "application/json",
-//         "Accept": "application/json"
-//     },
-//     body: JSON.stringify({
-//         front_side: "This is the question",
-//         back_side: "This is the answer",
-//         category: "Javascript",
-//         deck_id: 1
-//     })
-// })
-// .then(res => res.json())
-// .then(console.log)
-
-
+function addCard(){
+    let addNewCard = document.getElementById('addnewcard')
+    addNewCard.addEventListener('submit', (e) => {
+    e.preventDefault()
+    // console.dir(e.target)
+    let front_side = e.target[0].value 
+    let back_side = e.target[1].value 
+    let category = e.target[2].value 
+    
+  
+    fetch(cardsURL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({
+            front_side, back_side, category, deck_id: 1
+        })
+    })
+    .then(res => res.json())
+    .then(console.log)
+    addNewCard.reset()
+    })
+}
 
 
 
