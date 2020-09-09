@@ -1,17 +1,42 @@
 
 const cardsURL = "http://localhost:3000/cards/"
 
+javaCards()
 
-let js = document.getElementById('javascript')
+function javaCards(){
+    let js = document.getElementById('javascript')
 js.addEventListener('click', (e) => {
     e.preventDefault()
-    console.log(e.target)
+    console.dir(e.target)
 
 fetch(cardsURL)
 .then(res => res.json())
-.then(cards => allQs(cards))
+.then(cards => cards.forEach(card => (card.category === "Javascript")))
+
+
+
+
+    //  debugger
+    // console.log(e.target)
+
+    // getCards()
+    // allQs()
+  
+    // eachCard()
+})
+
+}
+
+
+// function getCards() {
+//     fetch(cardsURL)
+// .then(res => res.json())
+// .then(cards => allQs(cards))
+// }
+
 
 function allQs(cards) {
+   // debugger
 cards.forEach(card => eachCard(card))
 }
 
@@ -51,7 +76,6 @@ function eachCard(card) {
 
     javaContainer.append(divCard)
 }
-})
 
 
 
