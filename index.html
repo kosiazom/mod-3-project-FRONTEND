@@ -13,44 +13,6 @@
     <a id="javascript" href="">Javascript</a>
     <a id="ruby" href="">Ruby</a>
     <a id="htmlcss" href="">HTML/CSS</a>
-    <a id="addcard" >Add a Card</a>
-
-        <form id="addnewcard">
-        <label>Question</label>    
-        <input
-            type="text"
-            name="front_side"
-            value=""
-            placeholder="Enter Question"
-            id="frontside"
-        />
-        <br />
-        <label>Answer</label>
-        <input
-            type="text"
-            name="back_side"
-            value=""
-            placeholder="Enter Answer"
-            id="backside"
-        />
-        <br />
-      
-        <label>Select Category</label>
-            <select id = "categoryDropdown">
-                <br />
-                <option value = "Javascript"> Javascript </option>
-                <option value = "Ruby"> Ruby </option>
-                <option value = "HTML/CSS"> HTML/CSS </option>
-            </select>
-        <br />
-            <input
-            type="submit"
-            name="submit"
-            value="Create New Card"
-            class="submit"
-            />
-        </form>
-        <br />
         <a id="addcard" >Add New Deck</a>
 
         <form id="addnewdeck">
@@ -76,6 +38,42 @@
             type="submit"
             name="submit"
             value="Create New Deck"
+            class="submit"
+            />
+        </form>
+        <br />
+        <a id="addcard" >Add a Card</a>
+        <form id="addnewcard">
+        <label>Question</label>    
+            <input
+                type="text"
+                name="front_side"
+                value=""
+                placeholder="Enter Question"
+                id="frontside"
+            />
+        <br />
+        <label>Answer</label>
+            <input
+                type="text"
+                name="back_side"
+                value=""
+                placeholder="Enter Answer"
+                id="backside"
+            />
+        <br />
+        <label>Select Category</label>
+            <select id = "categoryDropdown">
+                <br />
+                <option value = "Javascript"> Javascript </option>
+                <option value = "Ruby"> Ruby </option>
+                <option value = "HTML/CSS"> HTML/CSS </option>
+            </select>
+        <br />
+            <input
+            type="submit"
+            name="submit"
+            value="Create New Card"
             class="submit"
             />
         </form>
