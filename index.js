@@ -1,10 +1,12 @@
 
 const cardsURL = "http://localhost:3000/cards/"
+const decksURL = "http://localhost:3000/decks/"
 
 javaCards()
 rubyCards()
 htmlcssCards()
 addCard()
+addDeck()
 
 function javaCards(){
     let js = document.getElementById('javascript')
@@ -94,29 +96,53 @@ function eachCard(card) {
 function addCard(){
     let addNewCard = document.getElementById('addnewcard')
     addNewCard.addEventListener('submit', (e) => {
-    e.preventDefault()
-    // console.dir(e.target)
-    let front_side = e.target[0].value 
-    let back_side = e.target[1].value 
-    let category = e.target[2].value 
-  
-    fetch(cardsURL, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body: JSON.stringify({
-            front_side, back_side, category
+        e.preventDefault()
+
+        let front_side = e.target[0].value 
+        let back_side = e.target[1].value 
+        let category = e.target[2].value 
+    
+        fetch(cardsURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                front_side, back_side, category
+            })
         })
-    })
-    .then(res => res.json())
-    .then(console.log)
-    addNewCard.reset()
+        
+        .then(res => res.json())
+        .then(card => eachCard(card))
+            addNewCard.reset()
     })
 }
 
 
-
+function addDeck(){
+    let addNewDeck = document.getElementById('addnewdeck')
+    addNewDeck.addEventListener('submit', (e) => {
+        e.preventDefault()
+        // console.dir(e.target)
+        // console.log(e.target[0].value)
+        let category = e.target[0].value 
+        let user_id = 17
+    
+        fetch(decksURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                category, user_id
+            })
+        })
+        .then(res => res.json())
+        .then(console.log)
+        addNewDeck.reset()
+    })
+}
 
 

@@ -16,7 +16,6 @@
     <a id="addcard" >Add a Card</a>
 
         <form id="addnewcard">
-            <!-- <h1> Add a New Card </h1> -->
         <label>Question</label>    
         <input
             type="text"
@@ -44,13 +43,43 @@
                 <option value = "HTML/CSS"> HTML/CSS </option>
             </select>
         <br />
-        <input
-        type="submit"
-        name="submit"
-        value="Create New Card"
-        class="submit"
-        />
+            <input
+            type="submit"
+            name="submit"
+            value="Create New Card"
+            class="submit"
+            />
         </form>
+        <br />
+        <a id="addcard" >Add New Deck</a>
+
+        <form id="addnewdeck">
+        <label>Deck</label>    
+        <input
+            type="text"
+            name="category"
+            value=""
+            placeholder="Enter Deck Name"
+            id="category"
+        />
+        <br />
+        <label>User ID</label>
+        <input
+            type= "number"
+            name="user_id"
+            value=""
+            placeholder="User ID"
+            id="user_id"
+        />
+        <br />
+            <input
+            type="submit"
+            name="submit"
+            value="Create New Deck"
+            class="submit"
+            />
+        </form>
+ 
 </div>
 
 <div class="welcome-container"> 
