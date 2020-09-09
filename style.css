@@ -60,9 +60,10 @@ body {
     position: relative;
   top: 0;
   left: 0;
-  width: 300px;
+  width: 500px;
   height: 400px;
-  border-radius: 20px;
+  border-radius: 60px;
+  padding: 25px 50px 75px 100px;
   margin-left: auto;
   margin-right: auto;
   transform-style: preserve-3d;
@@ -73,13 +74,13 @@ body {
 
 
 
-.thefront {
+.the-front {
     position: absolute;
     top: 0;
     left: 0;
     width: 50%;
-    height: 100%;
-    border-radius: 10px;
+    height: 75%;
+    border-radius: 20px;
     backface-visibility: hidden;
     overflow: hidden;
     background: rgb(143, 172, 196);
@@ -89,17 +90,17 @@ body {
     text-align: center;
     justify-content: center;
 }
-.card:hover .thefront {
+.card:hover .the-front {
     transform: perspective(500px) rotateY(180deg);
     }
 
-.theback {
+.the-back {
     position: absolute;
     top: 0;
     left: 0;
     width: 50%;
-    height: 100%;
-    border-radius: 10px;
+    height: 75%;
+    border-radius: 20px;
     backface-visibility: hidden;
     text-align: center;
     background: rgb(180, 110, 213);
@@ -108,6 +109,17 @@ body {
     transform: perspective(500px) rotateY(180deg);
 }
 
-.card:hover .theback {
+.card:hover .the-back {
     transform: perspective(500px) rotateY(3600deg);
     }
+
+#next-button {
+    background-color: lightcoral;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
