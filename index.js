@@ -9,9 +9,7 @@ let hc = document.getElementById('htmlcss')
 const addCardLink = document.getElementById("add-card")
 const cardContainer = document.querySelector('.new-card-container')
 
-javaCards()
-rubyCards()
-htmlcssCards()
+selectADeck()
 addCard()
 // addDeck()
 // getAllCards()
@@ -32,57 +30,20 @@ addCard()
         }
     })
 
+    function selectADeck(){
+        let deckTitle = document.querySelector('div#sidebar-title')
+        deckTitle.addEventListener('click', (e) => {
+            e.preventDefault()
+            let dTitle = e.target.innerText
+            let mc = document.querySelector('.main-container')
+            mc.innerHTML = ""
+        
+        fetch(cardsURL)
+        .then(res => res.json())
+        .then(cards => cards.forEach(card => card.category === dTitle ? eachCard(card) : console.log("Try Again")))
+        })
+    }
 
-
-    // function getAllCards(){
-    //     fetch(cardsURL)
-    //     .then(res => res.json())
-    //     .then(cards => cards.forEach())
-    // }
-
-function javaCards(){
-    let js = document.getElementById('javascript')
-js.addEventListener('click', (e) => {
-    e.preventDefault()
-    let mc = document.querySelector('.main-container')
-    mc.innerHTML = ""
-
-fetch(cardsURL)
-.then(res => res.json())
-.then(cards => cards.forEach(card => card.category === "Javascript" ? eachCard(card) : console.log("Try Again")))
-
-})
-}
-
-function rubyCards(){
-    let rb = document.getElementById('ruby')
-rb.addEventListener('click', (e) => {
-    e.preventDefault()
-    let mc = document.querySelector('.main-container')
-    mc.innerHTML = ""
-
-fetch(cardsURL)
-.then(res => res.json())
-.then(cards => cards.forEach(card => card.category === "Ruby" ? eachCard(card) : console.log("Try Again")))
-
-// cards.filter(card => card.category == e.target)
-
-})
-}
-
-function htmlcssCards(){
-    let hc = document.getElementById('htmlcss')
-hc.addEventListener('click', (e) => {
-    e.preventDefault()
-    let mc = document.querySelector('.main-container')
-    mc.innerHTML = ""
-
-fetch(cardsURL)
-.then(res => res.json())
-.then(cards => cards.forEach(card => card.category === "HTML/CSS" ? eachCard(card) : console.log("Try Again")))
-    
-})
-}
 
 function eachCard(card) {
     let javaContainer = document.querySelector(".main-container")
