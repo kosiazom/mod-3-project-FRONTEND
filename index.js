@@ -2,9 +2,12 @@
 const cardsURL = "http://localhost:3000/cards/"
 const decksURL = "http://localhost:3000/decks/"
 let addNewCard = false;
+let editCard = false
 let js = document.getElementById('javascript')
 let rb = document.getElementById('ruby')
 let hc = document.getElementById('htmlcss')
+const addCardLink = document.getElementById("add-card")
+const cardContainer = document.querySelector('.new-card-container')
 
 javaCards()
 rubyCards()
@@ -15,8 +18,7 @@ addCard()
 // hideForm()
 
 
-    const addCardLink = document.getElementById("add-card")
-    const cardContainer = document.querySelector('.new-card-container')
+    
     // console.log(deckContainer)
     
     addCardLink.addEventListener('click', (e) => {
@@ -29,6 +31,8 @@ addCard()
             cardContainer.style.display = "none"
         }
     })
+
+
 
     // function getAllCards(){
     //     fetch(cardsURL)
@@ -102,6 +106,8 @@ function eachCard(card) {
     
     editBtn.addEventListener('click', (e) => {
         console.log(e.target)
+        populateAddForm(e)
+        
     })
 
     let deleteBtn = document.createElement('button')
@@ -111,7 +117,9 @@ function eachCard(card) {
     deleteBtn.innerText = "Delete"
 
     deleteBtn.addEventListener('click', (e) => {
+    
         console.log(e.target)
+      
 
         fetch(cardsURL + card.id, {
             method: "DELETE"
@@ -131,10 +139,26 @@ function eachCard(card) {
     javaContainer.append(divCard)
     divCard.append(frontDiv, backDiv)
     frontDiv.append(h2, frontp)
-    backDiv.append(backH2, backp, deleteBtn,editBtn)
+    backDiv.append(backH2, backp, deleteBtn, editBtn)
 
 }
 
+function populateAddForm(e) {
+    let cardForm = document.getElementById('add-new-card')
+    console.log(cardForm[0].value)
+   // debugger
+cardForm[0].value =  e.target.parentElement.previousElementSibling.children[1].innerText
+cardForm[1].value =  e.target.parentElement.children[1].innerText
+
+let patchRequest = {
+    method: "PATCH",
+    header: {
+        "Content-Type": "application/json",
+        "Accept": "application/json"
+    },
+    body: JSON.stringify({})
+}
+}
 
 function addCard(){
     let addNewCard = document.getElementById('add-new-card')
