@@ -11,8 +11,6 @@ addDeck()
 // hideForm()
 
 
-    
-
     const addDeckLink = document.getElementById("add-deck")
     const deckContainer = document.querySelector('.new-deck-container')
     console.log(deckContainer)
@@ -29,12 +27,10 @@ addDeck()
     })
 
 
-
 function javaCards(){
     let js = document.getElementById('javascript')
 js.addEventListener('click', (e) => {
     e.preventDefault()
-    // console.dir(e.target)
     let mc = document.querySelector('.main-container')
     mc.innerHTML = ""
 
@@ -49,7 +45,6 @@ function rubyCards(){
     let rb = document.getElementById('ruby')
 rb.addEventListener('click', (e) => {
     e.preventDefault()
-    // console.dir(e.target)
     let mc = document.querySelector('.main-container')
     mc.innerHTML = ""
 
@@ -66,7 +61,6 @@ function htmlcssCards(){
     let hc = document.getElementById('htmlcss')
 hc.addEventListener('click', (e) => {
     e.preventDefault()
-    // console.dir(e.target)
     let mc = document.querySelector('.main-container')
     mc.innerHTML = ""
 
@@ -93,9 +87,19 @@ function eachCard(card) {
     frontp.id = "question-front"
     frontp.innerText = card.front_side
 
-    let nextBtn = document.createElement('button')
-    nextBtn.id = "next-button"
-    nextBtn.innerText = "Next"
+    let deleteBtn = document.createElement('button')
+    deleteBtn.id = "delete-button"
+    deleteBtn.dataset.cardId = card.id
+    deleteBtn.innerText = "Delete"
+
+    deleteBtn.addEventListener('click', (e) => {
+        console.log(e.target)
+
+        fetch(cardsURL + card.id, {
+            method: "DELETE"
+        })
+        .then( () => divCard.remove())
+    })
 
     let backDiv = document.createElement('div')
     backDiv.className = "the-back"
@@ -108,9 +112,8 @@ function eachCard(card) {
 
     javaContainer.append(divCard)
     divCard.append(frontDiv, backDiv)
-    frontDiv.append(h2, frontp, nextBtn)
-    backDiv.append(backH2, backp)
-
+    frontDiv.append(h2, frontp)
+    backDiv.append(backH2, backp, deleteBtn)
 
 }
 
@@ -146,8 +149,6 @@ function addDeck(){
     let addNewDeck = document.getElementById('addnewdeck')
     addNewDeck.addEventListener('submit', (e) => {
         e.preventDefault()
-        // console.dir(e.target)
-        // console.log(e.target[0].value)
         let category = e.target[0].value 
         let user_id = 3
     
@@ -166,5 +167,4 @@ function addDeck(){
         addNewDeck.reset()
     })
 }
-
 
