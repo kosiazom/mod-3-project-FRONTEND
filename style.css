@@ -3,7 +3,7 @@ body {
     /* margin: auto; */
     padding-top: 125px;
     padding-bottom: 40px;
-    font-family: "Georgia";
+    font-family: "Arial";
 }
 
 div .main-container{
@@ -22,29 +22,22 @@ div .main-container{
     float: right;
     /* margin-top: -100px; 
     margin-left: -100px;  */
-    
 }
-
 
 .welcome-container {
     width: 80%;
+    padding-left: 70px;
     /* margin: 0 auto; */
 }
 
 .fixed-header {
     width: 100%;
-    position: fixed;
+    position: absolute;
     padding: 10px;
     color: rgb(30, 119, 126);
     top: 0;
     text-align: center;
 }
-
-/* .header {
-    padding: 10px 16px;
-    background: purple;
-    color: black;
-} */
 
 .side-bar-menu {
     position: fixed;
@@ -62,7 +55,7 @@ div .main-container{
     color: white;
     display: block;
     text-decoration: none;
-    font-family: "Georgia";
+    font-family: "Arial";
     letter-spacing: 2px;
  }
 
@@ -78,7 +71,7 @@ div .main-container{
    font-size: 25px;
    color: white;
    text-decoration:none;
-   font-family: "Georgia";
+   font-family: "Arial";
    letter-spacing: 2px;
    text-transform: uppercase;
 }
@@ -104,8 +97,6 @@ div .main-container{
   float: right;
 }
 
-
-
 .card .the-front {
     position: absolute;
     top: 0;
@@ -126,8 +117,8 @@ div .main-container{
     padding: 10px;
     /* //transform-style: preserve-3d; */
 }
+
 .card:hover .the-front {
-    
     transform: perspective(1000px) rotateY(180deg);
     transform-style: preserve-3d;
     }
@@ -154,8 +145,7 @@ div .main-container{
 
 .card:hover .the-back {
     transform: rotateY(360deg);
-    
-    }
+}
 
 button {
     background-color: rgba(232, 164, 127, 0.913);
