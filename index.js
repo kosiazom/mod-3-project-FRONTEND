@@ -149,7 +149,7 @@ function addDeck(){
         // console.dir(e.target)
         // console.log(e.target[0].value)
         let category = e.target[0].value 
-        let user_id = 17
+        let user_id = 3
     
         fetch(decksURL, {
             method: "POST",
