@@ -11,7 +11,7 @@ addDeck()
 
     const addDeckLink = document.getElementById("add-deck")
     const deckContainer = document.querySelector('.new-deck-container')
-    console.log(deckContainer)
+    // console.log(deckContainer)
     
     addDeckLink.addEventListener('click', (e) => {
         
@@ -61,7 +61,7 @@ function eachCard(card) {
     deleteBtn.innerText = "Delete"
 
     deleteBtn.addEventListener('click', (e) => {
-        console.log(e.target)
+        e.preventDefault()
 
         fetch(cardsURL + card.id, {
             method: "DELETE"
@@ -136,3 +136,34 @@ function addDeck(){
     })
 }
 
+// function addDeck(){
+//     let addDeck = document.querySelector('a#add-deck')
+
+//     addDeck.addEventListener('submit', (e) => {
+//         e.preventDefault()
+//         debugger
+//         let category = e.target[0].value 
+
+//         let att = document.createElement('a')
+//         att.id = 
+    
+        // fetch(decksURL, {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //         "Accept": "application/json"
+        //     },
+        //     body: JSON.stringify({
+        //         category, user_id
+        //     })
+        // })
+        // .then(res => res.json())
+        // .then(console.log)
+        // addNewDeck.reset()
+    // })
+
+    // create new this --> <a id="javascript" href="">Javascript</a>
+    // event listener for <a id="add-deck" >Add New Deck</a>
+    // when deck is created, it needs to append to <div id="sidebar-title">
+    // deck = category: "Javascript", user_id: u2.id
+    // card = front_side: back_side: category: deck_id:
