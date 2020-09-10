@@ -35,15 +35,23 @@ addCard()
         }
     })
 
-    editCardLink.addEventListener('click', (e) =>{
-        
+    function dropDownEdit() {
         editCard = !editCard;
         if (editCard) {
             editCardContainer.style.display = "block"
         } else {
             editCardContainer.style.display = "none"
         }
-    })
+    }
+    // editCardLink.addEventListener('click', (e) =>{
+        
+    //     editCard = !editCard;
+    //     if (editCard) {
+    //         editCardContainer.style.display = "block"
+    //     } else {
+    //         editCardContainer.style.display = "none"
+    //     }
+    // })
 
 
     function selectADeck(){
@@ -82,7 +90,10 @@ function eachCard(card) {
     editBtn.id = "edit-btn"
     editBtn.innerText = "Edit"
     
-    editBtn.addEventListener('click', populateAddForm)
+    editBtn.addEventListener('click', (e) => {
+        dropDownEdit()
+        populateAddForm(e)
+    })
 
     let deleteBtn = document.createElement('button')
     deleteBtn.id = "delete-button"
@@ -116,6 +127,7 @@ function eachCard(card) {
 }
 
 function populateAddForm(e) {
+    //debugger
     let editForm = document.getElementById('edit-form')
     
     // console.log(e.target.parentElement.previousElementSibling.children[1].innerText)
@@ -124,8 +136,12 @@ function populateAddForm(e) {
 editForm[0].value =  e.target.parentElement.previousElementSibling.children[1].innerText
 editForm[1].value =  e.target.parentElement.children[1].innerText
 
+let frontp =  e.target.parentElement.previousElementSibling.children[1]
+let backp = e.target.parentElement.children[1]
+//debugger 
 let cardId = Number(e.target.parentElement.parentElement.dataset.cardId)
 editForm.addEventListener('submit', (e) => {
+    console.dir(e.target)
     e.preventDefault()
 
     let question = e.target[0].value
@@ -145,7 +161,11 @@ editForm.addEventListener('submit', (e) => {
 
         fetch(cardsURL + cardId, patchRequest)
         .then( resp => resp.json() )
-        .then( console.log )
+        .then( updatedCard => {
+            frontp.innerText = updatedCard.front_side
+            backp.innerText = updatedCard.back_side
+        } )
+        editForm.reset()
 })
 
 // 
