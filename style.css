@@ -1,8 +1,9 @@
 body {
-    background:rgb(207, 207, 207);
-    margin: auto;
+    background: rgb(228, 228, 228);
+    /* margin: auto; */
     padding-top: 125px;
     padding-bottom: 40px;
+    font-family: "Georgia";
 }
 
 div .main-container{
@@ -33,7 +34,6 @@ div .main-container{
 .fixed-header {
     width: 100%;
     position: fixed;
-    /* background: rgba(232, 164, 127, 0.913); */
     padding: 10px;
     color: rgb(30, 119, 126);
     top: 0;
@@ -62,14 +62,14 @@ div .main-container{
     color: white;
     display: block;
     text-decoration: none;
-    font-family: "Rubik";
+    font-family: "Georgia";
     letter-spacing: 2px;
  }
 
  .side-bar-menu a:hover {
     margin-left: 20px;
     transition: 0.4s;
-    color:  rgba(232, 164, 127, 0.913);
+    color: rgba(232, 164, 127, 0.913);
  }
 
  .side-bar-menu h2 {
@@ -78,7 +78,7 @@ div .main-container{
    font-size: 25px;
    color: white;
    text-decoration:none;
-   font-family: "Rubik";
+   font-family: "Georgia";
    letter-spacing: 2px;
    text-transform: uppercase;
 }
@@ -113,12 +113,13 @@ div .main-container{
     width: 50%;
     height: 75%;
     border-radius: 20px;
+    padding: 15px;
     backface-visibility: hidden;
     overflow: hidden;  
     background: rgba(232, 164, 127, 0.913);
-    color: #000;
+    color: rgb(70, 69, 69);
     margin: auto;
-    font-size: 16px;
+    font-size: 18px;
     text-align: center;
     justify-content: center;
     flex-direction: column;
@@ -137,10 +138,13 @@ div .main-container{
     left: 0;
     width: 50%;
     height: 75%;
+    padding: 15px;
     border-radius: 20px;
     backface-visibility: hidden;
+    font-size: 18px;
     text-align: center;
     background: rgb(30, 119, 126);
+    color: white;
     justify-content: center;
     margin: auto;
     transform: perspective(1000px) rotateY(180deg);
