@@ -1,6 +1,8 @@
 body {
-    background:gray;
-    margin: auto
+    background:rgb(207, 207, 207);
+    margin: auto;
+    padding-top: 125px;
+    padding-bottom: 40px;
 }
 
 div .main-container{
@@ -17,15 +19,32 @@ div .main-container{
     align-items: center;
     padding: 1px;
     float: right;
-    margin-top: -100px; 
-    margin-left: -100px; 
+    /* margin-top: -100px; 
+    margin-left: -100px;  */
     
 }
 
 
 .welcome-container {
-    background: purple;
+    width: 80%;
+    /* margin: 0 auto; */
 }
+
+.fixed-header {
+    width: 100%;
+    position: fixed;
+    background: rgba(219, 134, 69, 0.913);
+    padding: 10px;
+    color: white;
+    top: 0;
+    text-align: center;
+}
+
+/* .header {
+    padding: 10px 16px;
+    background: purple;
+    color: black;
+} */
 
 .side-bar-menu {
     position: fixed;
@@ -33,17 +52,16 @@ div .main-container{
     top: 0;
     left: 0;
     bottom: 0;
-    background: black;
+    background: rgb(81, 156, 155);
     padding-top: 50px;
-    color: #818181;
 }
  .side-bar-menu a {
-     padding: 10px 20px;
-     text-decoration: none;
-    font-size: 25px;
-    color: #818181;
+    padding: 15px 15px;
+    text-decoration: none;
+    font-size: 23px;
+    color: white;
     display: block;
-    text-decoration:none;
+    text-decoration: none;
     font-family: "Rubik";
     letter-spacing: 2px;
  }
@@ -51,14 +69,14 @@ div .main-container{
  .side-bar-menu a:hover {
     margin-left: 20px;
     transition: 0.4s;
-    color: purple;
+    color:rgba(219, 134, 69, 0.913);
  }
 
  .side-bar-menu h2 {
-    padding: 10px 20px;
+    padding: 15px 20px;
     text-decoration: none;
    font-size: 25px;
-   color: #818181;
+   color: black;
    text-decoration:none;
    font-family: "Rubik";
    letter-spacing: 2px;
