@@ -7,7 +7,9 @@ let js = document.getElementById('javascript')
 let rb = document.getElementById('ruby')
 let hc = document.getElementById('htmlcss')
 const addCardLink = document.getElementById("add-card")
+const editCardLink = document.getElementById('edit-card')
 const cardContainer = document.querySelector('.new-card-container')
+const editCardContainer = document.querySelector('.edit-card-container')
 
 selectADeck()
 addCard()
@@ -30,6 +32,17 @@ addCard()
         }
     })
 
+    editCardLink.addEventListener('click', (e) =>{
+        
+        editCard = !editCard;
+        if (editCard) {
+            editCardContainer.style.display = "block"
+        } else {
+            editCardContainer.style.display = "none"
+        }
+    })
+
+
     function selectADeck(){
         let deckTitle = document.querySelector('div#sidebar-title')
         deckTitle.addEventListener('click', (e) => {
@@ -50,6 +63,7 @@ function eachCard(card) {
 
     let divCard = document.createElement('div')
     divCard.className = "card"
+    divCard.dataset.cardId = card.id
 
     let frontDiv = document.createElement('div')
     frontDiv.className = "the-front"
@@ -65,16 +79,12 @@ function eachCard(card) {
     editBtn.id = "edit-btn"
     editBtn.innerText = "Edit"
     
-    editBtn.addEventListener('click', (e) => {
-        console.log(e.target)
-        populateAddForm(e)
-        
-    })
+    editBtn.addEventListener('click', populateAddForm)
 
     let deleteBtn = document.createElement('button')
     deleteBtn.id = "delete-button"
     
-    deleteBtn.dataset.cardId = card.id
+    // deleteBtn.dataset.cardId = card.id
     deleteBtn.innerText = "Delete"
 
     deleteBtn.addEventListener('click', (e) => {
@@ -105,20 +115,39 @@ function eachCard(card) {
 }
 
 function populateAddForm(e) {
-    let cardForm = document.getElementById('add-new-card')
-    console.log(cardForm[0].value)
-   // debugger
-cardForm[0].value =  e.target.parentElement.previousElementSibling.children[1].innerText
-cardForm[1].value =  e.target.parentElement.children[1].innerText
+    let editForm = document.getElementById('edit-form')
+    
+    // console.log(e.target.parentElement.previousElementSibling.children[1].innerText)
+    // console.dir(e.target)
+    //debugger
+editForm[0].value =  e.target.parentElement.previousElementSibling.children[1].innerText
+editForm[1].value =  e.target.parentElement.children[1].innerText
 
-let patchRequest = {
-    method: "PATCH",
-    header: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-    },
-    body: JSON.stringify({})
-}
+let cardId = Number(e.target.parentElement.parentElement.dataset.cardId)
+editForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    let question = e.target[0].value
+    let answer = e.target[1].value
+
+    let patchRequest = {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                front_side: question,
+                back_side: answer
+            })
+        }
+
+        fetch(cardsURL + cardId, patchRequest)
+        .then( resp => resp.json() )
+        .then( console.log )
+})
+
+// 
 }
 
 function addCard(){
