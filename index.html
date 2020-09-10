@@ -7,87 +7,12 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<div class="side-bar-menu">
-    <img src = "">
-    <h2>Decks</h2>
-    <a id="javascript" href="">Javascript</a>
-    <a id="ruby" href="">Ruby</a>
-    <a id="htmlcss" href="">HTML/CSS</a>
-        <a id="add-deck" >Add New Deck</a>
+    <div class="welcome-container"> 
+        <h1 id="welcome-user"> </h1>
+        <h3> Click on a deck to start.</h3>
+    </div>
 
-    <div class="new-deck-container">
-        <form id="addnewdeck">
-        <label>Deck</label>    
-        <input
-            type="text"
-            name="category"
-            value=""
-            placeholder="Enter Deck Name"
-            id="category"
-        />
-        <br />
-        <label>User ID</label>
-        <input
-            type= "number"
-            name="user_id"
-            value=""
-            placeholder="User ID"
-            id="user_id"
-        />
-        <br />
-            <input
-            type="submit"
-            name="submit"
-            value="Create New Deck"
-            class="submit"
-            />
-        </form>
-        <br />
-        <a id="addcard" >Add a Card</a>
-        <form id="addnewcard">
-        <label>Question</label>    
-            <input
-                type="text"
-                name="front_side"
-                value=""
-                placeholder="Enter Question"
-                id="frontside"
-            />
-        <br />
-        <label>Answer</label>
-            <input
-                type="text"
-                name="back_side"
-                value=""
-                placeholder="Enter Answer"
-                id="backside"
-            />
-        <br />
-            <label>Select Category</label>
-            <select id = "categoryDropdown">
-                <br />
-                <option value = "Javascript"> Javascript </option>
-                <option value = "Ruby"> Ruby </option>
-                <option value = "HTML/CSS"> HTML/CSS </option>
-            </select>
-        <br />
-            <input
-            type="submit"
-            name="submit"
-            value="Create New Card"
-            class="submit"
-            />
-            </form>
-        </div>
- 
-</div>
-
-<div class="welcome-container"> 
-    <h1 id="welcome-user"> </h1>
-    <h3> Click on a deck to start.</h3>
-</div>
-
-<div id="main-container">
+    <div class="main-container">
        
         <!-- <div class="card">
             <div class="the-front">
@@ -100,9 +25,87 @@
                 <p id="answer-back"> answer </p>
             </div>  -->
         <!-- </div>   -->
+    <div>
+
+
+<div class="side-bar-menu">
+    <img src = "">
+    <h2>Decks</h2>
+    <a id="javascript" href="">Javascript</a>
+    <a id="ruby" href="">Ruby</a>
+    <a id="htmlcss" href="">HTML/CSS</a>
+        <a id="add-deck" >Add New Deck</a>
+
+    <div class="new-deck-container">
+        <form id="addnewdeck">
+
+        <input
+            type="text"
+            name="category"
+            value=""
+            placeholder="Enter Deck Name..."
+            class="input-text"
+        />
+        <br />
+
+        <input
+            type= "number"
+            name="user_id"
+            value=""
+            placeholder="User ID..."
+            class="input-text"
+        />
+        <br />
+            <input
+            type="submit"
+            name="submit"
+            value="Create New Deck!"
+            class="submit"
+            />
+        </form>
+        <br />
+        <a id="addcard" >Add a Card</a>
+        <form id="addnewcard">
+         
+            <input
+                type="text"
+                name="front_side"
+                value=""
+                placeholder="Enter Question..."
+                class="input-text"
+            />
+        <br />
+        
+            <input
+                type="text"
+                name="back_side"
+                value=""
+                placeholder="Enter Answer..."
+                class="input-text"
+            />
+        <br />
+            
+            <select id = "category-dropdown">
+                <br />
+                <option value="" disabled selected hidden>Choose Category...</option>
+                <option value = "Javascript"> Javascript </option>
+                <option value = "Ruby"> Ruby </option>
+                <option value = "HTML/CSS"> HTML/CSS </option>
+            </select>
+
+        <br />
+        
+
+            <input
+            type="submit"
+            name="submit"
+            value="Create New Card!"
+            class="submit"
+            />
+            </form>
+        </div>
+ 
 </div>
-
-
 
 
 

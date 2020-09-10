@@ -1,6 +1,7 @@
 
 const cardsURL = "http://localhost:3000/cards/"
 const decksURL = "http://localhost:3000/decks/"
+let addNewDeck = false;
 
 javaCards()
 rubyCards()
@@ -10,13 +11,14 @@ addDeck()
 // hideForm()
 
 
-    let addNewDeck = false;
+    
 
     const addDeckLink = document.getElementById("add-deck")
     const deckContainer = document.querySelector('.new-deck-container')
     console.log(deckContainer)
     
     addDeckLink.addEventListener('click', (e) => {
+        
          addNewDeck = !addNewDeck;
         if (addNewDeck) {
             deckContainer.style.display = "block"
@@ -33,7 +35,7 @@ function javaCards(){
 js.addEventListener('click', (e) => {
     e.preventDefault()
     // console.dir(e.target)
-    let mc = document.getElementById('main-container')
+    let mc = document.querySelector('.main-container')
     mc.innerHTML = ""
 
 fetch(cardsURL)
@@ -48,7 +50,7 @@ function rubyCards(){
 rb.addEventListener('click', (e) => {
     e.preventDefault()
     // console.dir(e.target)
-    let mc = document.getElementById('main-container')
+    let mc = document.querySelector('.main-container')
     mc.innerHTML = ""
 
 fetch(cardsURL)
@@ -65,7 +67,7 @@ function htmlcssCards(){
 hc.addEventListener('click', (e) => {
     e.preventDefault()
     // console.dir(e.target)
-    let mc = document.getElementById('main-container')
+    let mc = document.querySelector('.main-container')
     mc.innerHTML = ""
 
 fetch(cardsURL)
@@ -76,7 +78,7 @@ fetch(cardsURL)
 }
 
 function eachCard(card) {
-    let javaContainer = document.getElementById("main-container")
+    let javaContainer = document.querySelector(".main-container")
 
     let divCard = document.createElement('div')
     divCard.className = "card"
@@ -104,12 +106,12 @@ function eachCard(card) {
     let backp = document.createElement('p')
     backp.innerText = card.back_side
 
+    javaContainer.append(divCard)
+    divCard.append(frontDiv, backDiv)
     frontDiv.append(h2, frontp, nextBtn)
     backDiv.append(backH2, backp)
 
-    divCard.append(frontDiv, backDiv)
 
-    javaContainer.append(divCard)
 }
 
 
