@@ -1,31 +1,40 @@
 
 const cardsURL = "http://localhost:3000/cards/"
 const decksURL = "http://localhost:3000/decks/"
-let addNewDeck = false;
+let addNewCard = false;
+let js = document.getElementById('javascript')
+let rb = document.getElementById('ruby')
+let hc = document.getElementById('htmlcss')
 
 javaCards()
 rubyCards()
 htmlcssCards()
 addCard()
-addDeck()
+// addDeck()
+// getAllCards()
 // hideForm()
 
 
-    const addDeckLink = document.getElementById("add-deck")
-    const deckContainer = document.querySelector('.new-deck-container')
-    console.log(deckContainer)
+    const addCardLink = document.getElementById("add-card")
+    const cardContainer = document.querySelector('.new-card-container')
+    // console.log(deckContainer)
     
-    addDeckLink.addEventListener('click', (e) => {
+    addCardLink.addEventListener('click', (e) => {
         
-         addNewDeck = !addNewDeck;
-        if (addNewDeck) {
-            deckContainer.style.display = "block"
+        addNewCard = !addNewCard;
+        if (addNewCard) {
+            cardContainer.style.display = "block"
         } 
         else {
-            deckContainer.style.display = "none"
+            cardContainer.style.display = "none"
         }
     })
 
+    // function getAllCards(){
+    //     fetch(cardsURL)
+    //     .then(res => res.json())
+    //     .then(cards => cards.forEach())
+    // }
 
 function javaCards(){
     let js = document.getElementById('javascript')
@@ -87,8 +96,17 @@ function eachCard(card) {
     frontp.id = "question-front"
     frontp.innerText = card.front_side
 
+    let editBtn = document.createElement('button')
+    editBtn.id = "edit-btn"
+    editBtn.innerText = "Edit"
+    
+    editBtn.addEventListener('click', (e) => {
+        console.log(e.target)
+    })
+
     let deleteBtn = document.createElement('button')
     deleteBtn.id = "delete-button"
+    
     deleteBtn.dataset.cardId = card.id
     deleteBtn.innerText = "Delete"
 
@@ -113,13 +131,13 @@ function eachCard(card) {
     javaContainer.append(divCard)
     divCard.append(frontDiv, backDiv)
     frontDiv.append(h2, frontp)
-    backDiv.append(backH2, backp, deleteBtn)
+    backDiv.append(backH2, backp, deleteBtn,editBtn)
 
 }
 
 
 function addCard(){
-    let addNewCard = document.getElementById('addnewcard')
+    let addNewCard = document.getElementById('add-new-card')
     addNewCard.addEventListener('submit', (e) => {
         e.preventDefault()
 
@@ -143,28 +161,29 @@ function addCard(){
             addNewCard.reset()
     })
 }
+   
 
 
-function addDeck(){
-    let addNewDeck = document.getElementById('addnewdeck')
-    addNewDeck.addEventListener('submit', (e) => {
-        e.preventDefault()
-        let category = e.target[0].value 
-        let user_id = 3
+// function addDeck(){
+//     letaddnewCard = document.getElementById('addnewdeck')
+//     addNewDeck.addEventListener('submit', (e) => {
+//         e.preventDefault()
+//         let category = e.target[0].value 
+//         let user_id = 3
     
-        fetch(decksURL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify({
-                category, user_id
-            })
-        })
-        .then(res => res.json())
-        .then(console.log)
-        addNewDeck.reset()
-    })
-}
+//         fetch(decksURL, {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 "Accept": "application/json"
+//             },
+//             body: JSON.stringify({
+//                 category, user_id
+//             })
+//         })
+//         .then(res => res.json())
+//         .then(console.log)
+//         addNewDeck.reset()
+//     })
+// }
 

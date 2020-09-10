@@ -134,7 +134,7 @@ div .main-container{
     
     }
 
-#delete-button {
+button {
     background-color: lightcoral;
     border-radius: 8px;
     color: white;
@@ -155,12 +155,12 @@ div .main-container{
     font-family: monospace;
 }
 
-form #addnewdeck {
+form #add-new-card {
     width: 80%;
     display: inline-block;
 }
 
-div .new-deck-container {
+div .new-card-container {
     text-align: center;
     display: none;
 }

@@ -37,37 +37,48 @@
         <a id="htmlcss" href="">HTML/CSS</a>
     </div>
   
-        <a id="add-deck" >Add New Deck</a>
+        <a id="add-card" >Add A New Card</a>
 
-    <div class="new-deck-container">
-        <form id="addnewdeck">
+    <div class="new-card-container">
+        <form id="add-new-card">
 
         <input
             type="text"
-            name="category"
+            name="front_side"
             value=""
-            placeholder="Enter Deck Category..."
+            placeholder="Enter Question..."
             class="input-text"
         />
         <br />
 
         <input
-            type= "number"
-            name="user_id"
+            type="text"
+            name="back_side"
             value=""
-            placeholder="User ID..."
+            placeholder="Enter Answer..."
             class="input-text"
         />
         <br />
+        <select id = "category-dropdown">
+            <br />
+            <option value="" disabled selected hidden>Choose Category...</option>
+            <option value = "Javascript"> Javascript </option>
+            <option value = "Ruby"> Ruby </option>
+            <option value = "HTML/CSS"> HTML/CSS </option>
+        </select>
+
+        <br/>
             <input
             type="submit"
             name="submit"
-            value="Create New Deck!"
+            value="Create New Card!"
             class="submit"
             />
         </form>
+
+
         <br />
-        <a id="addcard" >Add a Card</a>
+        <!-- <a id="addcard" >Edit a Card</a>
         <form id="addnewcard">
             <input
                 type="text"
@@ -104,7 +115,7 @@
             value="Create New Card!"
             class="submit"
             />
-            </form>
+            </form> -->
         </div>
  
 </div>
