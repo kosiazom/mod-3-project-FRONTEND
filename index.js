@@ -7,6 +7,26 @@ rubyCards()
 htmlcssCards()
 addCard()
 addDeck()
+// hideForm()
+
+
+    let addNewDeck = false;
+
+    const addDeckLink = document.getElementById("add-deck")
+    const deckContainer = document.querySelector('.new-deck-container')
+    console.log(deckContainer)
+    
+    addDeckLink.addEventListener('click', (e) => {
+         addNewDeck = !addNewDeck;
+        if (addNewDeck) {
+            deckContainer.style.display = "block"
+        } 
+        else {
+            deckContainer.style.display = "none"
+        }
+    })
+
+
 
 function javaCards(){
     let js = document.getElementById('javascript')
