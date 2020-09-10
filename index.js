@@ -67,7 +67,7 @@ hc.addEventListener('click', (e) => {
 fetch(cardsURL)
 .then(res => res.json())
 .then(cards => cards.forEach(card => card.category === "HTML/CSS" ? eachCard(card) : console.log("Try Again")))
-
+    
 })
 }
 

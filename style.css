@@ -162,6 +162,7 @@ form #addnewdeck {
 
 div .new-deck-container {
     text-align: center;
+    display: none;
 }
 
 .submit {
