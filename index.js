@@ -205,15 +205,9 @@ function addDeck(){
 
     newDeck.addEventListener('submit', (e) => {
         e.preventDefault()
-        debugger
         let category = e.target[0].value 
         let user_id = e.target[1].value 
 
-        let att = document.createElement('a')
-            att.id = category 
-            att.innerText = category
-        sidebarTitle.append(att)
-    
         fetch(decksURL, {
             method: "POST",
             headers: {
@@ -225,12 +219,17 @@ function addDeck(){
             })
         })
         .then(res => res.json())
-        .then(console.log)
+        .then(deck => appendNewDeck(deck))
         newDeck.reset()
+
+        function appendNewDeck(deck) {
+            let att = document.createElement('a')
+                att.id = category 
+                let categoryCap = category[0].toUpperCase() + category.slice(1)
+                att.innerText = categoryCap
+            sidebarTitle.append(att)
+        }
+    
     })
 }
-    // create new this --> <a id="javascript" href="">Javascript</a>
-    // event listener for <a id="add-deck" >Add New Deck</a>
-    // when deck is created, it needs to append to <div id="sidebar-title">
-    // deck = category: "Javascript", user_id: u2.id
-    // card = front_side: back_side: category: deck_id:
+
