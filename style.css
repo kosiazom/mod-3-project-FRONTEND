@@ -51,7 +51,7 @@ div .main-container{
     width: 100%;
     position: absolute;
     padding: 10px;
-    color: rgb(30, 119, 126);
+    color: rgb(60, 169, 177);
     top: 0;
     text-align: center;
 }
@@ -62,7 +62,7 @@ div .main-container{
     top: 0;
     left: 0;
     bottom: 0;
-    background: rgb(30, 119, 126);
+    background: rgb(60, 169, 177);
     padding-top: 50px;
 }
  .side-bar-menu a {
@@ -79,7 +79,7 @@ div .main-container{
  .side-bar-menu a:hover {
     margin-left: 20px;
     transition: 0.4s;
-    color: rgba(232, 164, 127, 0.913);
+    color: rgba(240, 161, 118, 0.913);
  }
 
  .side-bar-menu h2 {
@@ -124,7 +124,7 @@ div .main-container{
     padding: 15px;
     backface-visibility: hidden;
     overflow: hidden;  
-    background: rgba(232, 164, 127, 0.913);
+    background: rgba(240, 161, 118, 0.913);
     color: rgb(70, 69, 69);
     margin: auto;
     font-size: 18px;
@@ -151,7 +151,7 @@ div .main-container{
     backface-visibility: hidden;
     font-size: 18px;
     text-align: center;
-    background: rgb(30, 119, 126);
+    background: rgb(60, 169, 177);
     color: white;
     justify-content: center;
     margin: auto;
@@ -165,7 +165,7 @@ div .main-container{
 }
 
 button {
-    background-color: rgba(232, 164, 127, 0.913);
+    background-color: rgba(240, 161, 118, 0.913);
     border-radius: 8px;
     color: white;
     padding: 15px 32px;
@@ -209,7 +209,7 @@ div .edit-card-container {
     width: max-content;
     height: 2rem;
     margin: 3px;
-    background: rgba(232, 164, 127, 0.913);
+    background: rgba(240, 161, 118, 0.913);
     color: white;
 }
 
