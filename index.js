@@ -11,6 +11,7 @@ const editCardLink = document.getElementById('edit-card')
 const cardContainer = document.querySelector('.new-card-container')
 const editCardContainer = document.querySelector('.edit-card-container')
 
+dropDownEdit()
 selectADeck()
 addCard()
 // addDeck()
@@ -18,11 +19,6 @@ addCard()
 // hideForm()
 
 
-    const addDeckLink = document.getElementById("add-deck")
-    const deckContainer = document.querySelector('.new-deck-container')
-    // console.log(deckContainer)
-    
-    // console.log(deckContainer)
     
     addCardLink.addEventListener('click', (e) => {
         
@@ -207,9 +203,6 @@ function patchQuestion(e){
    
 }
 
-
-
-// 
 
 
 function addCard(){

@@ -208,7 +208,7 @@ div .new-card-container {
 
 div .edit-card-container {
     text-align: center;
-    /* display: none; */
+    display: none;
 }
 
 .submit {
