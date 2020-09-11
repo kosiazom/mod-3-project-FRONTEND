@@ -185,14 +185,14 @@ button {
     font-family: monospace;
 }
 
-form #add-new-cat {
+form #add-new-deck {
     width: 80%;
     display: inline-block;
 }
 
 div .new-deck-container {
     text-align: center;
-    display: none;
+    display: block;
 }
 
 

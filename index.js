@@ -13,7 +13,7 @@ const editCardContainer = document.querySelector('.edit-card-container')
 
 selectADeck()
 addCard()
-addDeck()
+// addDeck()
 // getAllCards()
 // hideForm()
 
@@ -197,39 +197,48 @@ function addCard(){
     })
 }
    
-        
-function addDeck(){
 
-        let newDeck = document.querySelector('form#add-new-deck')
-        let sidebarTitle = document.querySelector('div#sidebar-title')
 
-    newDeck.addEventListener('submit', (e) => {
-        e.preventDefault()
-        let category = e.target[0].value 
-        let user_id = e.target[1].value 
+   
+// function addDeck(){
+//     let newDeck = document.querySelector('#add-new-deck')
+//     let sidebarTitle = document.querySelector('div#sidebar-title')
+//     let createdeck = document.querySelector('#add-new-cat')
 
-        fetch(decksURL, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify({
-                category, user_id
-            })
-        })
-        .then(res => res.json())
-        .then(deck => appendNewDeck(deck))
-        newDeck.reset()
+//     newDeck.addEventListener('submit', (e) => {
+//         e.preventDefault()
+//         console.log("hi")
+//         let category = e.target[0].value 
+//         let user_id = e.target[1].value 
 
-        function appendNewDeck(deck) {
-            let att = document.createElement('a')
-                att.id = category 
-                let categoryCap = category[0].toUpperCase() + category.slice(1)
-                att.innerText = categoryCap
-            sidebarTitle.append(att)
-        }
+//         fetch(decksURL, {
+//             method: "POST",
+//             headers: {
+//                 "Content-Type": "application/json",
+//                 "Accept": "application/json"
+//             },
+//             body: JSON.stringify({
+//                 category, user_id
+//             })
+//         })
+//         .then(res => res.json())
+//         .then(deck => appendNewDeck(deck))
+//         newDeck.reset()
+
+//         function appendNewDeck(deck) {
+//             let att = document.createElement('a')
+//                 att.id = category 
+//                 let categoryCap = category[0].toUpperCase() + category.slice(1)
+//                 att.innerText = categoryCap
+//             sidebarTitle.append(att)
+//             let catDropdown = document.querySelector('#category-dropdown')
+//             let opt = document.createElement('option')
+//                 opt.value = categoryCap
+//                 opt.innerText = categoryCap
+//             catDropdown.append(categoryCap, opt)
+//             eachCard(card)
+//         }
     
-    })
-}
+//     })
+// }
 
