@@ -13,7 +13,7 @@ const editCardContainer = document.querySelector('.edit-card-container')
 
 selectADeck()
 addCard()
-// addDeck()
+addDeck()
 // getAllCards()
 // hideForm()
 
@@ -197,57 +197,38 @@ function addCard(){
     })
 }
    
+        
+function addDeck(){
 
+        let newDeck = document.querySelector('form#add-new-deck')
+        let sidebarTitle = document.querySelector('div#sidebar-title')
 
-// function addDeck(){
-//     letaddnewCard = document.getElementById('addnewdeck')
-//     addNewDeck.addEventListener('submit', (e) => {
-//         e.preventDefault()
-//         let category = e.target[0].value 
-//         let user_id = 3
+    newDeck.addEventListener('submit', (e) => {
+        e.preventDefault()
+        debugger
+        let category = e.target[0].value 
+        let user_id = e.target[1].value 
+
+        let att = document.createElement('a')
+            att.id = category 
+            att.innerText = category
+        sidebarTitle.append(att)
     
-//         fetch(decksURL, {
-//             method: "POST",
-//             headers: {
-//                 "Content-Type": "application/json",
-//                 "Accept": "application/json"
-//             },
-//             body: JSON.stringify({
-//                 category, user_id
-//             })
-//         })
-//         .then(res => res.json())
-//         .then(console.log)
-//         addNewDeck.reset()
-//     })
-// }
-
-// function addDeck(){
-//     let addDeck = document.querySelector('a#add-deck')
-
-//     addDeck.addEventListener('submit', (e) => {
-//         e.preventDefault()
-//         debugger
-//         let category = e.target[0].value 
-
-//         let att = document.createElement('a')
-//         att.id = 
-    
-        // fetch(decksURL, {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         "Accept": "application/json"
-        //     },
-        //     body: JSON.stringify({
-        //         category, user_id
-        //     })
-        // })
-        // .then(res => res.json())
-        // .then(console.log)
-        // addNewDeck.reset()
-    // })
-
+        fetch(decksURL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                category, user_id
+            })
+        })
+        .then(res => res.json())
+        .then(console.log)
+        newDeck.reset()
+    })
+}
     // create new this --> <a id="javascript" href="">Javascript</a>
     // event listener for <a id="add-deck" >Add New Deck</a>
     // when deck is created, it needs to append to <div id="sidebar-title">

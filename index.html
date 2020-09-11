@@ -33,15 +33,49 @@
 
 <div class="side-bar-menu">
     <img src = "">
-    <h2>Decks</h2>
+    <h1>Decks</h1>
+    <h3>
     <div id="sidebar-title">
         <a id="javascript" href="">Javascript</a>
         <a id="ruby" href="">Ruby</a>
         <a id="htmlcss" href="">HTML/CSS</a>
     </div>
-  
-        <a id="add-card" >Add A New Card</a>
+    </h3>
+    <h3>
+        <a id="add-new-cat" >Create A Category</a>
+    </h3>
+    <div class="new-card-container">
+        <form id="add-new-deck">
 
+        <input
+            type="text"
+            name="category"
+            value=""
+            placeholder="Enter Category..."
+            class="input-text"
+        />
+        <br />
+        <input
+            type="number"
+            name="user_id"
+            value=""
+            placeholder="Enter Your User ID..."
+            class="input-text"
+        />
+        <br/>
+            <input
+            type="submit"
+            name="submit"
+            value="Create A Category"
+            class="submit"
+            />
+        </form>
+    </div>
+
+        <br />
+        <h3>
+        <a id="add-card" >Add A New Card</a>
+        </h3>
     <div class="new-card-container">
         <form id="add-new-card">
 
@@ -80,9 +114,10 @@
         </form>
     </div>
 
-
         <br />
+        <h3>
          <a id="edit-card" >Edit a Card</a>
+        </h3>
     <div class="edit-card-container">
         <form id="edit-form">
             <input
@@ -103,7 +138,6 @@
             />
         <br />
             
-        
             <input
             type="submit"
             name="submit"
@@ -114,7 +148,6 @@
     </div>
  
 </div>
-
 
 
     <script src="index.js"></script>
