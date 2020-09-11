@@ -1,10 +1,27 @@
 body {
-    background: rgb(228, 228, 228);
+    /* background: rgb(228, 228, 228); */
     /* margin: auto; */
-    padding-top: 125px;
-    padding-bottom: 40px;
-    font-family: "Arial";
+     /* padding-top: 125px;
+    padding-bottom: 40px; */
+    font-family: "Tahoma";
 }
+    
+#background-img {
+    /* background-image: url("file:///Users/designerjina/Desktop/dots.png"); */
+    background-image: url("file:///Users/designerjina/Desktop/gear2.jpg");
+    /* background-image: url("https://www.pngkit.com/png/detail/68-682052_technology-background-white-png-white-data.png"); */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    opacity: 0.5;
+    filter:alpha(opacity=50);
+}   
+
 
 div .main-container{
     position: relative;
@@ -55,7 +72,7 @@ div .main-container{
     color: white;
     display: block;
     text-decoration: none;
-    font-family: "Arial";
+    font-family: "Tahoma";
     letter-spacing: 2px;
  }
 
@@ -71,15 +88,15 @@ div .main-container{
    font-size: 25px;
    color: white;
    text-decoration:none;
-   font-family: "Arial";
+   font-family: "Tahoma";
    letter-spacing: 2px;
    text-transform: uppercase;
 }
 
 
 .card {
-    position: relative;
-  top: 0;
+  position: relative;
+  top: 150px;
   left: 0;
   width: 500px;
   height: 400px;
