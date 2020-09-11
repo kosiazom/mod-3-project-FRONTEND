@@ -129,7 +129,7 @@ function eachCard(card) {
 function populateAddForm(e) {
     //debugger
     editCardContainer.innerHTML = ""
-editCardContainer.innerHTML = `<form id="edit-form"> //created the form instead of having it in the HTML so that we can cleare the container each time we edit a card
+editCardContainer.innerHTML = `<form id="edit-form"> 
 <input
     type="text"
     name="front_side"
@@ -156,7 +156,7 @@ value="Update Card!"
 class="submit"
 />
 </form>`
-
+//created the form instead of having it in the HTML so that we can cleare the container each time we edit a card
     let editForm = document.getElementById('edit-form')
     
     // console.log(e.target.parentElement.previousElementSibling.children[1].innerText)
