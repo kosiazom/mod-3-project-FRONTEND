@@ -91,7 +91,7 @@ function eachCard(card) {
     editBtn.innerText = "Edit"
     
     editBtn.addEventListener('click', (e) => {
-        dropDownEdit()
+        //dropDownEdit()
         populateAddForm(e)
     })
 
@@ -128,6 +128,35 @@ function eachCard(card) {
 
 function populateAddForm(e) {
     //debugger
+    editCardContainer.innerHTML = ""
+editCardContainer.innerHTML = `<form id="edit-form">
+<input
+    type="text"
+    name="front_side"
+    value=""
+    placeholder="Question..."
+    class="input-text"
+/>
+<br />
+
+<input
+    type="text"
+    name="back_side"
+    value=""
+    placeholder="Answer..."
+    class="input-text"
+/>
+<br />
+
+
+<input
+type="submit"
+name="submit"
+value="Update Card!"
+class="submit"
+/>
+</form>`
+
     let editForm = document.getElementById('edit-form')
     
     // console.log(e.target.parentElement.previousElementSibling.children[1].innerText)
@@ -135,41 +164,53 @@ function populateAddForm(e) {
     //debugger
 editForm[0].value =  e.target.parentElement.previousElementSibling.children[1].innerText
 editForm[1].value =  e.target.parentElement.children[1].innerText
-
+console.log(e.target)
 let frontp =  e.target.parentElement.previousElementSibling.children[1]
 let backp = e.target.parentElement.children[1]
 //debugger 
 let cardId = Number(e.target.parentElement.parentElement.dataset.cardId)
-editForm.addEventListener('submit', (e) => {
+console.log(cardId)
+editForm.addEventListener('submit', (e) => patchQuestion(e) )
+// editForm.removeEventListener('submit', (e) => patchQuestion(e) )
+
+
+function patchQuestion(e){
     console.dir(e.target)
-    e.preventDefault()
+       //debugger
+       e.preventDefault()
+       let question = e.target[0].value
+       let answer = e.target[1].value
+   
+       let patchRequest = {
+               method: "PATCH",
+               headers: {
+                   "Content-Type": "application/json",
+                   "Accept": "application/json"
+               },
+               body: JSON.stringify({
+                   front_side: question,
+                   back_side: answer
+               })
+           }
+   
+           fetch(cardsURL + cardId, patchRequest)
+           .then( resp => resp.json() )
+           .then( updatedCard => {
+               console.log(updatedCard)
+               
+               frontp.innerText = updatedCard.front_side
+               backp.innerText = updatedCard.back_side
+           } )
+           editForm.reset()
+   
+   }
+   
+}
 
-    let question = e.target[0].value
-    let answer = e.target[1].value
 
-    let patchRequest = {
-            method: "PATCH",
-            headers: {
-                "Content-Type": "application/json",
-                "Accept": "application/json"
-            },
-            body: JSON.stringify({
-                front_side: question,
-                back_side: answer
-            })
-        }
-
-        fetch(cardsURL + cardId, patchRequest)
-        .then( resp => resp.json() )
-        .then( updatedCard => {
-            frontp.innerText = updatedCard.front_side
-            backp.innerText = updatedCard.back_side
-        } )
-        editForm.reset()
-})
 
 // 
-}
+
 
 function addCard(){
     let addNewCard = document.getElementById('add-new-card')
