@@ -240,13 +240,18 @@ function addCard(){
    
 
 
+   
 // function addDeck(){
-//     letaddnewCard = document.getElementById('addnewdeck')
-//     addNewDeck.addEventListener('submit', (e) => {
+//     let newDeck = document.querySelector('#add-new-deck')
+//     let sidebarTitle = document.querySelector('div#sidebar-title')
+//     let createdeck = document.querySelector('#add-new-cat')
+
+//     newDeck.addEventListener('submit', (e) => {
 //         e.preventDefault()
+//         console.log("hi")
 //         let category = e.target[0].value 
-//         let user_id = 3
-    
+//         let user_id = e.target[1].value 
+
 //         fetch(decksURL, {
 //             method: "POST",
 //             headers: {
@@ -258,39 +263,23 @@ function addCard(){
 //             })
 //         })
 //         .then(res => res.json())
-//         .then(console.log)
-//         addNewDeck.reset()
+//         .then(deck => appendNewDeck(deck))
+//         newDeck.reset()
+
+//         function appendNewDeck(deck) {
+//             let att = document.createElement('a')
+//                 att.id = category 
+//                 let categoryCap = category[0].toUpperCase() + category.slice(1)
+//                 att.innerText = categoryCap
+//             sidebarTitle.append(att)
+//             let catDropdown = document.querySelector('#category-dropdown')
+//             let opt = document.createElement('option')
+//                 opt.value = categoryCap
+//                 opt.innerText = categoryCap
+//             catDropdown.append(categoryCap, opt)
+//             eachCard(card)
+//         }
+    
 //     })
 // }
 
-// function addDeck(){
-//     let addDeck = document.querySelector('a#add-deck')
-
-//     addDeck.addEventListener('submit', (e) => {
-//         e.preventDefault()
-//         debugger
-//         let category = e.target[0].value 
-
-//         let att = document.createElement('a')
-//         att.id = 
-    
-        // fetch(decksURL, {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         "Accept": "application/json"
-        //     },
-        //     body: JSON.stringify({
-        //         category, user_id
-        //     })
-        // })
-        // .then(res => res.json())
-        // .then(console.log)
-        // addNewDeck.reset()
-    // })
-
-    // create new this --> <a id="javascript" href="">Javascript</a>
-    // event listener for <a id="add-deck" >Add New Deck</a>
-    // when deck is created, it needs to append to <div id="sidebar-title">
-    // deck = category: "Javascript", user_id: u2.id
-    // card = front_side: back_side: category: deck_id:

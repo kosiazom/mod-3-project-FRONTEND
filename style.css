@@ -58,7 +58,7 @@ div .main-container{
 
 .side-bar-menu {
     position: fixed;
-    width: 250px;
+    width: 300px;
     top: 0;
     left: 0;
     bottom: 0;
@@ -82,7 +82,7 @@ div .main-container{
     color: rgba(240, 161, 118, 0.913);
  }
 
- .side-bar-menu h2 {
+ .side-bar-menu h1{
     padding: 15px 20px;
     text-decoration: none;
    font-size: 25px;
@@ -184,6 +184,17 @@ button {
     box-sizing: border-box;
     font-family: monospace;
 }
+
+form #add-new-deck {
+    width: 80%;
+    display: inline-block;
+}
+
+div .new-deck-container {
+    text-align: center;
+    display: block;
+}
+
 
 form #add-new-card {
     width: 80%;
