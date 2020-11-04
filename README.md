@@ -14,15 +14,12 @@
 
 > Study all is an flashcard application to help students prepare for technical interviews. This is built with a JavaScript Frontend and Rails backend
 
-## Install
-
-```sh
-npm install
-```
+## Backend
+ Backend here --> [Here](https://github.com/kosiazom/mod3-study-hall-BACKEND)
 
 ## Author
 
-👤 **Kosi Akporji**
+👤 **Kosi Akporji** & **Jina Strickland**
 
 * Website: https://www.linkedin.com/in/kosi-akporji/
 * Twitter: [@Built2CodeByGrc](https://twitter.com/Built2CodeByGrc)
