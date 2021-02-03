@@ -26,7 +26,7 @@ Full Demo --> [Here](https://youtu.be/wyz6vUxO1mE)
 
 * Website: https://www.linkedin.com/in/kosi-akporji/ || www.linkedin.com/in/jinastrickland/
 * Twitter: [@Built2CodeByGrc](https://twitter.com/Built2CodeByGrc)
-* Github: [@kosiazom](https://github.com/kosiazom) || github.com/JinaStrickland
+* Github: [@kosiazom](https://github.com/kosiazom) || https://github.com/JinaStrickland
 * LinkedIn: [@www.linkedin.com\/in\/kosi-akporji](https://linkedin.com/in/www.linkedin.com\/in\/kosi-akporji) || www.linkedin.com/in/jinastrickland/
 
 ## Show your support
