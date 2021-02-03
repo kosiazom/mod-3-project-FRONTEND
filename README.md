@@ -24,10 +24,10 @@ Full Demo --> [Here](https://youtu.be/wyz6vUxO1mE)
 
 👤 **Kosi Akporji** & **Jina Strickland**
 
-* Website: https://www.linkedin.com/in/kosi-akporji/
+* Website: https://www.linkedin.com/in/kosi-akporji/ || www.linkedin.com/in/jinastrickland/
 * Twitter: [@Built2CodeByGrc](https://twitter.com/Built2CodeByGrc)
-* Github: [@kosiazom](https://github.com/kosiazom) 
-* LinkedIn: [@www.linkedin.com\/in\/kosi-akporji](https://linkedin.com/in/www.linkedin.com\/in\/kosi-akporji) || https://www.linkedin.com/in/jinastrickland/
+* Github: [@kosiazom](https://github.com/kosiazom) || github.com/JinaStrickland
+* LinkedIn: [@www.linkedin.com\/in\/kosi-akporji](https://linkedin.com/in/www.linkedin.com\/in\/kosi-akporji) || www.linkedin.com/in/jinastrickland/
 
 ## Show your support
 
